@@ -1,0 +1,16 @@
+{% extends 'base/base.html' %}
+
+
+{% block content %}
+    <h1>Página Principal</h1>
+    
+    
+    {% if user.is_authenticated %}
+    <p>Bienvenido {{user}}</p>
+    <a href="{% url 'users:logout' %}" >Cerrar Sesión</a>
+    {% else %}
+    <a href="{% url 'users:login' %}">Inicia Sesión</a>
+    {% endif %}
+        
+{% endblock content %}
+    
